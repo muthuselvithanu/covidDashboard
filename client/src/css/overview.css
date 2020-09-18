@@ -1,0 +1,120 @@
+#signout
+{
+    height:20px;
+    text-align: right;
+    margin-bottom:25px;
+    }
+#signout a{
+text-decoration: none;
+float:right;
+height:20px;
+}
+* {
+    box-sizing: border-box;
+  }
+  #loader { 
+    border: 12px solid #f3f3f3; 
+    border-radius: 50%; 
+    border-top: 12px solid #444444; 
+    width: 70px; 
+    height: 70px; 
+    animation: spin 1s linear infinite; 
+} 
+  @keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+} 
+  .center { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+} 
+  #container
+  {
+    display:flex;
+    flex-direction: column;
+  }
+  #globalcase
+  {
+    height:230px;
+  }
+    /* Float four columns side by side */
+  
+  .column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+    height:230px;
+    align-items:center;
+    }
+  
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;
+height:250px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+  /* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    height:230px;
+    border-radius:10px;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+     }
+  p,#time{
+        font-size: 18px;
+    margin-bottom: 0px;
+    margin-top:15px;
+    
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+        .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  #country,h1,h2
+{
+    text-align:center;
+    margin:20px 0px;
+}
+.detail a
+{
+ 
+text-decoration: none;
+font-size:20px;
+padding:14px 16px;
+text-align: center;
+}
+.detail
+{
+    text-align: center;
+    margin-top: 30px; 
+}
+h3
+{
+  margin-top:15px;
+  margin-bottom:0px;
+  font-size: 25px;
+}
+#hiname
+{
+  padding-right: 10px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="loader" style="display:block" class="center"></div>
+    <div id="container" style="display:none">
+        <div id="signout">
+            Hi <span id="hiname"></span>
+            <a href='./../index.html'>SignOut</a>
+        </div>
+        <h1>COVID 19 GLOBAL CASES</h1>
+        <div id="globalcase">
+        </div>
+        <div id="country">
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Date & Time</h3>
+                    <div id="date">
+                    </div>
+                    <div id="time">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>Weather</h3>
+                    <div id="weather">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>COVID19 Cases</h3>
+                    <div id="covidcases">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail">
+        <a href="countrydetail.html">View Other Countries In Detail
+    </div>
+    <script type="text/javascript" src="./js/overview.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/overview.css">
+</body>
+
+</html>
