@@ -11,8 +11,8 @@ window.onload = function () {
     getDate(response.timezone);
     getTime();
     getWeather(response.city);
-    let regionCode = (response.region).toLowerCase();
-    getCovid(regionCode);
+    let regionName = (response.regionName).toLowerCase();
+    getCovid(regionName);
     displayGlobalCases();
     if (response) {
         document.querySelector(
@@ -56,10 +56,10 @@ function getWeather(cityName) {
         "<p>Feeslike:" + getCelsius(weatherResponse.main.feels_like) + "&#8451;" + " /" + getFahrenheit(weatherResponse.main.feels_like) + "&#8457;" + "</p>" +
         "<p>Humidity:" + weatherResponse.main.humidity + "%" + "</p>";
 }
-function getCovid(regioncode) {
-    let currentDetailsResponse = JSON.parse(httpGet("https://api.covidtracking.com/v1/states/" + regioncode + "/current.json"));
-    document.getElementById("covidcases").innerHTML = "<p>TotalConfirmed:" + " " + currentDetailsResponse.positive + "</p>" +
-        "<p>TotalDeaths:" + " " + currentDetailsResponse.death + "</p>";
+function getCovid(regionname) {
+    let currentDetailsResponse = JSON.parse(httpGet("https://disease.sh/v3/covid-19/states/" + regionname));
+    document.getElementById("covidcases").innerHTML = "<p>TotalConfirmed:" + " " + currentDetailsResponse.cases + "</p>" +
+        "<p>TotalDeaths:" + " " + currentDetailsResponse.deaths + "</p>";
 }
 function showCountry(countryName, cityName, region) {
     document.getElementById("country").innerHTML = "<h2>" + countryName + " - " + cityName + "/" + region + "</h2>";

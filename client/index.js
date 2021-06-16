@@ -1,3 +1,9 @@
+const errorMessages = {
+    "email": "Please Enter Valid Email Id",
+    "password":"Please Enter Valid Password",
+    "username":"Please Enter Valid Username",
+    "zipcode":"Please Enter Valid Zipcode"
+};
 var loginDiv = document.getElementById("login");
 var registerDiv = document.getElementById("register");
 var usernameErrDiv = document.getElementById('usernameErr');
@@ -35,7 +41,7 @@ function validateLoginForm() {
     let nameDiv = document.getElementById('nameErr');
     let pwdDiv = document.getElementById('pwdErr');
     if (name == "" || !(name.includes("@")) || !(name.includes(".co"))) {
-        loginform.name.classList.add("errorborder");
+        loginform.user_name.classList.add("errorborder");
         nameDiv.innerHTML = errorMessages.email;
         nameDiv.style.display = "block";
         isValid = false;
