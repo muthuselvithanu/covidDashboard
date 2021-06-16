@@ -36,7 +36,10 @@ app.post('/saveRegisterForm', function (req, res) {
             }
          }
          responseData.usersList.push(req.body);
-         fs.writeFile('registerDetail.json', JSON.stringify(responseData));
+         fs.writeFile('registerDetail.json', JSON.stringify(responseData),function(err, result) {   
+               if(err) 
+               console.log('error', err);   
+             });
          res.statusMessage = "Registration Successful";
          res.status(200).send();
       }
