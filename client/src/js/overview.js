@@ -11,8 +11,9 @@ window.onload = function () {
     getDate(response.timezone);
     getTime();
     getWeather(response.city);
+    let countryCode=(response.countryCode);
     let regionName = (response.regionName).toLowerCase();
-    getCovid(regionName);
+    getCovid(countryCode,regionName);
     displayGlobalCases();
     if (response) {
         document.querySelector(
@@ -56,10 +57,19 @@ function getWeather(cityName) {
         "<p>Feeslike:" + getCelsius(weatherResponse.main.feels_like) + "&#8451;" + " /" + getFahrenheit(weatherResponse.main.feels_like) + "&#8457;" + "</p>" +
         "<p>Humidity:" + weatherResponse.main.humidity + "%" + "</p>";
 }
-function getCovid(regionname) {
-    let currentDetailsResponse = JSON.parse(httpGet("https://disease.sh/v3/covid-19/states/" + regionname));
+function getCovid(countrycode,regionname) {
+   /* const requestURL = countrycode === "US" ? "https://disease.sh/v3/covid-19/states/"+regionname : "https://covid19.mathdro.id/api/countries/"+countrycode*/
+   if(countrycode==="US")
+   {
+    let currentDetailsResponse = JSON.parse(httpGet("https://disease.sh/v3/covid-19/states/"+regionname));
     document.getElementById("covidcases").innerHTML = "<p>TotalConfirmed:" + " " + currentDetailsResponse.cases + "</p>" +
-        "<p>TotalDeaths:" + " " + currentDetailsResponse.deaths + "</p>";
+    "<p>TotalDeaths:" + " " + currentDetailsResponse.deaths + "</p>";
+   }
+   else{
+   let currentDetailsResponse = JSON.parse(httpGet( "https://covid19.mathdro.id/api/countries/"+countrycode));
+    document.getElementById("covidcases").innerHTML = "<p>TotalConfirmed:" + " " + currentDetailsResponse.confirmed.value + "</p>" +
+        "<p>TotalDeaths:" + " " + currentDetailsResponse.deaths.value + "</p>";
+   }
 }
 function showCountry(countryName, cityName, region) {
     document.getElementById("country").innerHTML = "<h2>" + countryName + " - " + cityName + "/" + region + "</h2>";
